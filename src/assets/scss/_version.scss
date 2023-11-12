@@ -1,0 +1,246 @@
+.version {
+  padding: 2.5rem 3rem;
+  background: rgba(221, 223, 236, 0.40);
+
+  &__title {
+    margin-bottom: 2rem;
+    color: #393B44;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__list-box {
+    position: relative;
+  }
+
+  &__list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, auto);
+    grid-template-rows: repeat(var(--qty), 5.1rem);
+    grid-auto-flow: column;
+    column-gap: 7rem;
+    width: fit-content;
+    min-width: 100%;
+    height: calc(100% - 4.5rem);
+    padding-right: 10rem;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: var(--top);
+    width: 100%;
+    height: 1px;
+    background-color: white;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    height: 5.1rem;
+
+    > * {
+      flex: none;
+    }
+  }
+
+  &__item-version {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5rem;
+    height: 2.8rem;
+    border-radius: 100rem;
+    background-color: white;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #78C33B;
+
+    &.not-last {
+      color: #FE6E1E;
+    }
+  }
+
+  &__item-status {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    background-color: $gray;
+
+    &.active {
+      background-color: $green;
+    }
+
+    &.disable {
+      background-color: $red;
+    }
+  }
+
+  &__item-name {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  &__item-ip {
+    font-size: 1.6rem;
+  }
+
+  &__item-info-text {
+    flex: none;
+
+    > * {
+      display: none;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    .wait {
+      color: #8998AB;
+
+      .dots {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        width: 20px;
+        height: 4px;
+
+        > span,
+        &:before,
+        &:after {
+          content: '';
+          display: block;
+          width: 2px;
+          height: 2px;
+          border-radius: 100%;
+          background-color: #A1B1C5;
+        }
+
+        > span {
+          animation: 1s linear .3s infinite wait-dots;
+        }
+
+        &:before {
+          animation: 1s linear 0s infinite wait-dots;
+        }
+
+        &:after {
+          animation: 1s linear .6s infinite wait-dots;
+        }
+
+        @keyframes wait-dots {
+          0% {
+            width: 2px;
+            height: 2px;
+          }
+          1% {
+            width: 4px;
+            height: 4px;
+          }
+          34% {
+            width: 4px;
+            height: 4px;
+          }
+          35% {
+            width: 2px;
+            height: 2px;
+          }
+          100% {
+            width: 2px;
+            height: 2px;
+          }
+        }
+      }
+    }
+
+    .success {
+      color: #78C33B;
+
+      > svg {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+
+    .error {
+      color: #EB376D;
+
+      > svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+
+  &__file-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+
+    > input {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-right: 5rem !important;
+    }
+  }
+
+  &__file-icon {
+    width: 5.7rem;
+    height: 5.7rem;
+  }
+
+  &__file-text-box {
+  }
+
+  &__file-title {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  &__file-name {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  &__update-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    height: 5.8rem;
+    padding: 0.5rem 2rem 0.5rem 0.8rem;
+    border-radius: 100rem;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: white;
+    transition: box-shadow .2s ease;
+
+    &:hover {
+      box-shadow: 0 0 1rem 1px rgba(0,0,0,0.2) inset;
+    }
+
+    &--green {
+      background-color: #87D449;
+    }
+
+    &--purple {
+      background-color: #8B98EE;
+    }
+
+    > svg {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+}

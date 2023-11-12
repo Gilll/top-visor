@@ -1,0 +1,87 @@
+@import "param";
+@import "set";
+@import "menu";
+@import "main";
+@import "home";
+@import "details";
+@import "monitoring";
+@import "groups";
+@import "group";
+@import "positions";
+@import "farm";
+@import "settings";
+@import "dist";
+@import "version";
+@import "projects";
+@import "project";
+@import "captcha";
+@import "config-select";
+@import "networks";
+
+@import "modal";
+@import "modal-server";
+@import "modal-captcha";
+@import "modal-group";
+@import "modal-del";
+@import "modal-stat";
+@import "modal-farm";
+@import "modal-dist";
+@import "modal-switch";
+@import "modal-log";
+@import "modal-upload";
+@import "modal-confirm";
+@import "modal-project";
+@import "modal-network";
+@import "modal-load-log";
+@import "alert";
+
+.isLoading {
+  position: relative;
+  color: transparent !important;
+
+  > *:not(.isLoading__img) {
+    opacity: 0;
+  }
+
+  @keyframes isLoadingAnim {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .isLoading__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    max-width: 60%;
+    max-height: 60%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    animation: 1s linear isLoadingAnim infinite;
+  }
+}
+
+.main-wrap {
+  display: flex;
+  width: 100%;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+@media (min-width: 48.01em) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 48em) {
+  .desktop {
+    display: none;
+  }
+}

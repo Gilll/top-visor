@@ -1,0 +1,25 @@
+$black: #393B44;
+$purple: #8B98EE;
+$green: #87D449;
+$green-light: #7ADA7E;
+$red: #EB376D;
+$pink: #FE85D5;
+$orange: #FF9255;
+$azure: #5BC2FF;
+$gray: #CACCDA;
+
+@mixin btn-hover {
+  transition: box-shadow .2s ease;
+
+  &:hover {
+    box-shadow: 0 0 1rem 1px rgba(0,0,0,0.2) inset;
+  }
+}
+
+@mixin min-btn-hover {
+  transition: box-shadow .2s ease;
+
+  &:hover {
+    box-shadow: 0 0 .5rem 1px rgba(0,0,0,0.2) inset;
+  }
+}

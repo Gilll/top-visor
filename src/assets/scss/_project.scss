@@ -1,0 +1,113 @@
+.project {
+  padding: 2.5rem 2rem;
+  background: rgb(238, 239, 245);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+  }
+
+  &__title-icon {
+    display: block;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 100%;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+    }
+  }
+
+  &__title-text {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  &__title-info-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .8rem;
+    height: 100%;
+    padding: 0 6rem 0 2.4rem;
+    border-radius: 100rem;
+    background: rgba(221, 223, 236, 0.40);
+
+    &--link {
+      @include btn-hover;
+    }
+  }
+
+  &__info-item-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #93A1B2;
+  }
+
+  &__info-item-text {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: lowercase;
+
+    > svg,
+    > img {
+      width: 1.6rem;
+      height: 1.6rem;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__info-item-icon {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(-50%);
+
+    > img,
+    > svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__content-title {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.2rem;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__server-setting-btn,
+  &__server-stat-link {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 100%;
+
+    > img,
+    > svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:not(:first-child) {
+      margin-left: .5rem;
+    }
+  }
+}

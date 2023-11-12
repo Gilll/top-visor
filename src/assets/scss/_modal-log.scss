@@ -1,0 +1,22 @@
+.modal-log__content {
+  background: white;
+  font-size: 1.8rem;
+  border-radius: 5rem;
+  padding: 3rem;
+  max-height: calc(100vh - 10rem);
+  overflow-y: auto;
+}
+
+.modal-log__content p {
+  margin-bottom: 1rem;
+}
+
+.modal-log__content p:last-child {
+  margin-bottom: 0;
+}
+
+.modal-log__line {
+  background-color: black;
+  height: 1px;
+  margin: 2rem 0;
+}

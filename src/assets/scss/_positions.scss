@@ -1,0 +1,226 @@
+.positions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  padding: 1.6rem 2rem 2rem 2rem;
+  border-radius: 5rem;
+  background-color: white;
+
+  &__header {
+    margin-bottom: 1.6rem;
+  }
+
+  &__title-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__add-btn {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 100%;
+    background-color: $green;
+    @include btn-hover;
+
+    > svg {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  }
+
+  &__title {
+    transform: translateY(1px);
+    font-size: 2.5rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 3.5rem;
+    background-color: rgba(221, 223, 236, 0.4);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22rem;
+    min-height: 6rem;
+    margin-right: 3rem;
+    border-radius: 2rem;
+    background-color: #D2D9FB;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: .04em;
+    color: #606B9F;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color .25s ease;
+
+    &:hover {
+      background-color: #b1bbe8;
+    }
+  }
+
+  &__name-box {
+    display: flex;
+    width: 54.5rem;
+    margin-right: 2rem;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+  }
+
+  &__number {
+    transform: translateY(-.4rem);
+    margin-left: 1rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: $green;
+  }
+
+  &__info-box {
+    width: 20rem;
+    margin-right: 2rem;
+  }
+
+  &__info-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  &__info-text {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: .04em;
+
+    &--red {
+      color: $red;
+    }
+
+    > svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1.4rem;
+  }
+
+  &__switch-buttons {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 1.2rem 1.2rem 1.2rem 2.8rem;
+    margin-right: .4rem;
+    border-radius: 100rem;
+    background-color: white;
+    box-shadow: .5rem .5rem 3rem -1rem #26457329;
+  }
+
+  &__switch-btn-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__switch-btn-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  &__switch-btn {
+    position: relative;
+    width: 6.6rem;
+    height: 3.6rem;
+    border-radius: 100rem;
+    background-color: #ECEEF4;
+    box-shadow: .5rem .5rem 3rem -1rem rgba(29, 46, 58, 0.16);
+    transition: background-color .2s ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: .6rem;
+      top: 50%;
+      width: 2.7rem;
+      height: 2.7rem;
+      transform: translate(0, -50%);
+      border-radius: 100%;
+      border: 3px solid #B0B2C0;
+      background-color: #CACCDA;
+      transition: transform .3s ease, background-color .3s ease, border .3s ease;
+    }
+
+    &.disable {
+      &:before {
+        border: 3px solid #C62555;
+        background-color: $red;
+      }
+    }
+
+    &.active {
+      &:before {
+        transform: translate(3rem, -50%);
+        border: 3px solid #78C43B;
+        background-color: $green;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: .5rem .5rem 3rem -1rem rgba(29, 46, 58, 0.16);
+    @include btn-hover;
+
+    &.edit {
+      > svg {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+
+    &.del {
+      > svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+  }
+}

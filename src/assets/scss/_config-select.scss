@@ -1,0 +1,222 @@
+.config-select {
+  &--ssd {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.4rem;
+    column-gap: 2rem;
+
+    > * {
+      flex: 45%;
+    }
+
+    > .config-select__title {
+      flex: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1.4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: 1.6rem 1.4rem;
+    border-radius: 2rem;
+    background-color: #EEEFF5;
+
+    &--label {
+      width: 76.8rem;
+      height: 8.2rem;
+      padding: 0;
+    }
+  }
+
+  &__box {
+    flex: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 5rem;
+
+    &:first-child {
+      flex: auto;
+    }
+
+    &:not(:first-child) {
+      margin-left: 3rem;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -1.6rem;
+        top: 0;
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(161, 177, 197, 0.5);
+      }
+    }
+  }
+
+  &__info {
+    flex: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 1.3rem 0;
+    border-radius: 1.4rem;
+    background-color: white;
+  }
+
+  &__name {
+    flex: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 2rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  &__text {
+    flex: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+    border-left: 1px solid rgba(161, 177, 197, 0.5);
+    font-weight: 700;
+    font-size: 1.6rem;
+
+    &:nth-child(2):last-child {
+      padding: 0 3rem;
+    }
+  }
+
+  &__select-btn {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1.4rem;
+    background-color: white;
+    @include min-btn-hover;
+  }
+
+  &__qty-box {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 13.4rem;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1.4rem;
+    background-color: white;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  &__qty-operator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 100%;
+    background-color: #EEEFF5;
+    cursor: pointer;
+    @include min-btn-hover;
+  }
+
+  &__qty {
+  }
+
+  &__ram {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 9.4rem;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1.4rem;
+    background-color: white;
+    font-weight: 700;
+    font-size: 1.6rem;
+
+    > span {
+      color: #93A1B2;
+    }
+
+    > p {
+      transform: translateY(1px);
+    }
+  }
+
+  &__ssd-add {
+    order: 10;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    letter-spacing: .02em;
+    transition: opacity .2s ease, visibility .2s ease;
+
+    > span:not(.icon) {
+      transform: translateY(1px);
+    }
+
+    > .icon {
+      position: relative;
+      width: 5.6rem;
+      height: 5.6rem;
+      border-radius: 100%;
+      background-color: $green;
+      @include btn-hover;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1.6rem;
+        height: 2px;
+        border-radius: 100rem;
+        transform: translate(-50%, -50%);
+        background-color: white;
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+
+    &.disable {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__textarea-label {
+    width: 100%;
+    height: 100%;
+    padding: 1.8rem 2rem;
+
+    > textarea {
+      width: 100%;
+      height: 100%;
+      font-size: 1.6rem;
+      resize: none;
+    }
+  }
+}

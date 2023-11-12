@@ -1,0 +1,133 @@
+.captcha {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: rgba(221, 223, 236, 0.4);
+
+  &__header,
+  &__item {
+    display: flex;
+    align-items: center;
+
+    > * {
+      flex: none;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(1) {
+        width: 5rem;
+      }
+      &:nth-child(2) {
+        justify-content: center;
+        width: 2.4rem;
+        text-align: center;
+      }
+      &:nth-child(3) {
+        width: 3.8rem;
+      }
+      &:nth-child(4) {
+        width: 18.4rem;
+      }
+      &:nth-child(5) {
+        width: 21.4rem;
+      }
+      &:nth-child(6) {
+        width: 76.2rem;
+      }
+      &:nth-child(7) {
+        justify-content: flex-end;
+        width: 20.2rem;
+        text-align: right;
+      }
+      &:nth-child(8) {
+        justify-content: flex-end;
+        width: 20.2rem;
+        text-align: right;
+      }
+
+      &:not(:last-child) {
+        padding-right: 1.4rem;
+      }
+    }
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding-bottom: 1.2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #93A1B2;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid white;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      bottom: 0;
+      z-index: -1;
+      width: calc(100% + 4rem);
+      height: calc(100% + 3rem);
+      background-color: rgba(238, 239, 245);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 0.6rem 0;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    cursor: pointer;
+    isolation: isolate;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      z-index: -1;
+      width: calc(100% + 2rem);
+      height: 100%;
+      border-radius: 2.7rem;
+      transition: background-color .15s ease, box-shadow .15s ease;
+    }
+
+    &:hover {
+      &:before {
+        background-color: rgba(256,256,256,0.4);
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid white;
+    }
+
+    &.active {
+      z-index: 2;
+      font-weight: 700;
+
+      &:before {
+        background-color: white;
+        box-shadow: 1rem 1rem 4rem 0 #2229531A;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid transparent;
+      }
+
+      .home__item-btn > button,
+      .home__item-btn-list,
+      .home__switch-btn {
+        background-color: #EBECF2;
+      }
+    }
+  }
+}

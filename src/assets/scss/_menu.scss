@@ -1,0 +1,71 @@
+.menu {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 10rem;
+  min-height: calc(100vh - 4rem);
+  padding: 2rem 0;
+  margin-right: 2rem;
+  border-radius: 100rem;
+  background-color: white;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.6rem;
+    height: 6.6rem;
+    border-radius: 100%;
+    background-color: #EEEFF5;
+    transition: box-shadow .2s ease;
+
+    > svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      --fill: transparent;
+      --stroke: transparent;
+
+      path,
+      circle {
+        fill: var(--fill);
+        stroke: var(--stroke);
+      }
+    }
+
+    &.gray {
+      > svg path {
+        fill: #A1B1C5;
+
+        &.pathStroke {
+          fill: none;
+          stroke: #A1B1C5;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 1rem 1px rgba(0,0,0,0.2) inset;
+    }
+
+    &.active {
+      background-color: $purple;
+      box-shadow: none;
+
+      > svg path,
+      > svg circle {
+        fill: var(--fillActive);
+        stroke: var(--strokeActive);
+      }
+    }
+  }
+}

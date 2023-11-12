@@ -1,0 +1,143 @@
+.group {
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 54.6rem);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  &__item {
+    height: auto;
+    padding: 2rem;
+    border-radius: 3rem;
+    background-color: white;
+    box-shadow: 1rem 2rem 10rem rgba(34, 41, 83, 0.1);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  &__text {
+    margin-top: .3rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #93A1B2;
+  }
+
+  &__info-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: .6rem;
+    border-radius: 4rem;
+    background-color: #F1F2F7;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__info-icon {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1.6rem;
+    border-radius: 100%;
+    background-color: $gray;
+
+    > svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &.purple {
+      background-color: $purple;
+    }
+
+    &.green {
+      background-color: $green;
+    }
+  }
+
+  #group-statistic1 .group__data-list p:nth-child(2) {
+    display: none;
+  }
+
+  &__data-list {
+    display: flex;
+    align-items: center;
+
+    > li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          width: .4rem;
+          height: .4rem;
+          margin-left: .5rem;
+          margin-right: 1.5rem;
+          border-radius: 100%;
+          background-color: $gray;
+        }
+      }
+    }
+  }
+
+  &__data-list-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    img, svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    > div {
+      transform: translateY(1px);
+
+      > p:nth-child(2) {
+        margin-top: -1rem;
+        font-size: 1.3rem;
+        color: #92A1B2;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 100%;
+    background-color: $purple;
+    @include btn-hover;
+
+    > svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
